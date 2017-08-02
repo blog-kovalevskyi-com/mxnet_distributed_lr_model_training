@@ -52,7 +52,7 @@ model = mxnet.mod.Module(
 #Evaluation Data
 eval_data = np.array([[7,2],[6,10],[12,2]])
 eval_label = np.array([11,26,16])
-train_iter = mxnet.io.NDArrayIter(train_data,train_label, batch_size, shuffle=True,label_name=’lin_reg_label’)
+train_iter = mxnet.io.NDArrayIter(train_data,train_label, batch_size, shuffle=True,label_name='lin_reg_label')
 eval_iter = mxnet.io.NDArrayIter(eval_data, eval_label, batch_size, shuffle=False)
 model.fit(train_iter, eval_iter,
  optimizer_params={'learning_rate':0.005, 'momentum': 0.9},
