@@ -10,7 +10,7 @@ scheduler_env.update({
   "DMLC_NUM_WORKER": "1",
   "PS_VERBOSE": "2"
 })
-subprocess.Popen("python -c ‘import mxnet’", shell=True, env=scheduler_env)
+subprocess.Popen("python -c 'import mxnet'", shell=True, env=scheduler_env)
 
 server_env = os.environ.copy()
 server_env.update({
@@ -21,7 +21,7 @@ server_env.update({
   "DMLC_NUM_WORKER": "1",
   "PS_VERBOSE": "2"
 })
-subprocess.Popen(“python -c ‘import mxnet’”, shell=True, env=server_env)
+subprocess.Popen("python -c 'import mxnet'", shell=True, env=server_env)
 
 os.environ.update({
   "DMLC_ROLE": "worker",
@@ -34,7 +34,7 @@ os.environ.update({
 import mxnet
 import numpy as np
 import logging
-kv_store = mxnet.kv.create(‘dist_async’)
+kv_store = mxnet.kv.create('dist_async')
 
 logging.getLogger().setLevel(logging.DEBUG)
 train_data = np.random.uniform(0, 1, [100, 2])
